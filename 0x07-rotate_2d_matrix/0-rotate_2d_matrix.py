@@ -4,7 +4,7 @@
 
 
 def rotate_2d_matrix(m):
-    """main function: rotates a 2d array 90 deg"""
+    """Rotates 2D matrix"""
     width = len(m[0])
     height = len(m)
     total_items = width * height
@@ -19,7 +19,7 @@ def rotate_2d_matrix(m):
 
 
 def build_map(m, length, width):
-    """returns a map of prev_index and their
+    """return map of previous index and
     next positions"""
     dct = {
         i: {
@@ -42,23 +42,21 @@ def get_new_index(i, width):
 
 
 def get_value(m, i, width):
-    """gets the value of a 2d array by denormalizing
-    its flattened index"""
+    """gets the value of a 2d"""
     current_index = i % width
     current_row = int(i / width)
     return m[current_row][current_index]
 
 
 def compute_row_and_index(flat_index, width):
-    """returns denormalized row and index from a
-    flattened 2d array index"""
+    """returns denormalized row and index"""
     row = int(flat_index / width)
     index = flat_index % width
     return row, index
 
 
 def printx(lst):
-    """custom print function to print 2d array"""
+    """custom print function"""
     print("[")
     for itm in lst:
         print("  ", str(itm) + ",")
@@ -66,7 +64,7 @@ def printx(lst):
 
 
 def build_matrix(n):
-    """ builds n * n 2d matrix """
+    """ builds 2d matrix """
     parent = []
     y = 1
     for i in range(n):
